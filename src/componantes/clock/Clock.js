@@ -1,10 +1,9 @@
-import React, { componantes } from "react";
+import React, { Component } from "react";
 
-class Clock extends componantes {
+class Clock extends Component {
   constructor(props) {
-    this.state = {
-      dat: new Date(),
-    };
+    super(props);
+    this.state = { date: new Date() };
   }
 
   tick() {

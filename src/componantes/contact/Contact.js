@@ -1,4 +1,4 @@
-import React, { componantes } from "react";
+import React, { Component } from "react";
 
 class Contact extends Component {
   constructor(props) {
@@ -24,11 +24,19 @@ class Contact extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    this.stateState({
+    this.setState({
       submitte: true,
     });
   };
-
+  Resetform = (event) => {
+    this.setState({
+      submitte: false,
+      fromData: {
+        firstName: "",
+        lastName: "",
+      },
+    });
+  };
   render() {
     if (this.state.submitted) {
       return (
@@ -36,25 +44,16 @@ class Contact extends Component {
           <p>
             Thank you, {this.state.fromData.firstName}, for submitting the from.
           </p>
-          <button onClick={this.resetform}>Reset from</button>
+          <button onClick={this.Resetform}>Reset from</button>
         </div>
       );
     }
 
-    resetform = (event) => {
-      this.setState({
-        submitte: false,
-        fromData: {
-          firstName: "",
-          lastName: "",
-        },
-      });
-    };
     return (
       <div className="Contact">
         <form onSubmit={this.handleSubmit}>
           <div>
-            <label htmlFor="fristName"></label>
+            <label htmlFor="fristName">First Name </label>
             <input
               type="text"
               name="firstName"
@@ -64,7 +63,7 @@ class Contact extends Component {
           </div>
 
           <div>
-            <label htmlFor="lastName">Last tName</label>
+            <label htmlFor="lastName">Last Name</label>
             <input
               type="text"
               name="lastName"
