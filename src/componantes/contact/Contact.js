@@ -43,6 +43,7 @@ class Contact extends Component {
         <div className="Contact">
           <p>
             Thank you, {this.state.fromData.firstName}, for submitting the from.
+            Thank you, {this.state.fromData.lastName}, for submitting the from.
           </p>
           <button onClick={this.Resetform}>Reset from</button>
         </div>
@@ -59,6 +60,7 @@ class Contact extends Component {
               name="firstName"
               value={this.state.fromData.firstName}
               onChange={this.handleChange}
+              placeholder="First Name"
             />
           </div>
 
@@ -69,6 +71,7 @@ class Contact extends Component {
               name="lastName"
               value={this.state.fromData.firstName}
               onChange={this.handleChange}
+              placeholder="Last Name"
             />
           </div>
 
